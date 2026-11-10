@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Sesión 2 y 5: codificación, escala (viewport) y metadatos para SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emprendimiento peruano que convierte jeans usados en bolsas, cartucheras, sombreros y accesorios únicos, duraderos y sostenibles.">
+    <meta name="keywords" content="jean reciclado, bolsas de jean, cartucheras, sombreros, upcycling, moda sostenible, Lima">
+    <meta name="author" content="Denim Renace">
+    <meta name="copyright" content="Denim Renace">
+    <title>ReJean · Bolsas, cartucheras y sombreros de jean reutilizado</title>
+    <!-- Sesión 5: icono de la pestaña (96 x 96 px, carpeta imagenes) -->
+    <link rel="icon" href="imagenes/icono.png" type="image/x-icon">
+    <!-- Sesión 11: tipografía de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Sesión 3: hoja de estilos vinculada -->
+    <link rel="stylesheet" href="css/estilos.css" type="text/css">
+</head>
+<body>
+
+    <!-- ===== Sesión 9: barra de navegación con menú desplegable ===== -->
+    <header>
+        <nav>
+            <a class="logo" href="#"><img src="imagenes/icono.png" alt="Logo de ReJean">Re<span>Jean</span></a>
+            <!-- Botón que solo se ve en celulares (Sesión 9) -->
+            <button id="menu-cel">☰</button>
+            <ul class="menu" id="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#productos">Productos ▾</a>
+                    <ul class="sub">
+                        <li><a href="#bolsas">Bolsas</a></li>
+                        <li><a href="#cartucheras">Cartucheras</a></li>
+                        <li><a href="#sombreros">Sombreros</a></li>
+                    </ul>
+                </li>
+                <li><a href="#taller">Personaliza</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#faq">Preguntas</a></li>
+                <li><a class="boton" href="#contacto">Pedir el mío</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== Sesión 6: slider de imágenes (banner de presentación) ===== -->
+        <section id="slider">
+            <div id="sliders">
+                <div class="slide slider1">
+                    <div class="texto-slide">
+                        <span class="sobretitulo">Hecho en Perú · Cero desperdicio</span>
+                        <h1>Tu jean viejo tiene una <span class="resaltado">segunda vida</span></h1>
+                        <p>Convertimos jeans usados en bolsas, cartucheras y sombreros resistentes, únicos y cosidos a mano.</p>
+                        <a class="boton boton-latido" href="#productos">Ver productos</a>
+                        <a class="boton boton-borde" href="#contacto">Haz tu pedido</a>
+                    </div>
+                </div>
+                <div class="slide slider2">
+                    <div class="texto-slide">
+                        <span class="sobretitulo">Para la escuela, la oficina y la calle</span>
+                        <h2>Cartucheras que <span class="resaltado">aguantan</span> todo el año</h2>
+                        <p>Cierres reforzados, costuras doradas y un diseño que nadie más tendrá: cada pieza nace de un jean distinto.</p>
+                        <a class="boton" href="#cartucheras">Ver cartucheras</a>
+                    </div>
+                </div>
+                <div class="slide slider3">
+                    <div class="texto-slide">
+                        <span class="sobretitulo">Moda circular</span>
+                        <h2>Sombreros con <span class="resaltado">actitud</span> y con causa</h2>
+                        <p>Cada sombrero evita que más de un kilo de tela termine en un botadero. Ponte algo que cuida el planeta.</p>
+                        <a class="boton" href="#proceso">Cómo lo hacemos</a>
+                    </div>
+                </div>
+                <div class="slide slider4">
+                    <div class="texto-slide">
+                        <span class="sobretitulo">Hazlo tuyo</span>
+                        <h2>Tú eliges el <span class="resaltado">jean</span>, el hilo y el modelo</h2>
+                        <p>Diseña tu pieza en nuestro personalizador y mira cómo queda antes de pedirla. Nadie tendrá una igual.</p>
+                        <a class="boton" href="#taller">Personalizar ahora</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Etiquetas con animación de valanceo (Sesión 12) -->
+            <span class="etiqueta etiqueta1">Pieza única</span>
+            <span class="etiqueta etiqueta2">Cosido a mano</span>
+        </section>
+
+        <!-- ===== Sesión 12: marquesina (texto que se desplaza) ===== -->
+        <div id="marquesina">
+            <p class="texto_animacion">REUTILIZA ✦ RECICLA ✦ RENUEVA ✦ JEAN CON HISTORIA ✦ CERO DESPERDICIO ✦ REUTILIZA ✦ RECICLA ✦ RENUEVA ✦ JEAN CON HISTORIA ✦ CERO DESPERDICIO</p>
+        </div>
+
+        <!-- ===== Presentación ===== -->
+        <section id="nosotros">
+            <div class="contenedor dos-columnas">
+                <article class="columna">
+                    <span class="sobretitulo">Quiénes somos</span>
+                    <h2>Del clóset al taller, del taller a tu mochila.</h2>
+                    <hr>
+                    <p class="lead">Somos un emprendimiento joven que rescata jeans que ya nadie usa. Los lavamos, los cortamos y los cosemos a mano para crear accesorios resistentes, útiles y con estilo propio.</p>
+                    <div class="etiquetas">
+                        <span>100% reutilizado</span>
+                        <span>Cosido a mano</span>
+                        <span>Hecho en Lima</span>
+                    </div>
+                    <!-- Sesión 1: etiqueta aside para contenido relacionado -->
+                    <aside>
+                        <h4>¿Sabías que...?</h4>
+                        <p>La industria de la moda es una de las más contaminantes del mundo: un solo pantalón jean necesita miles de litros de agua para fabricarse. Reutilizarlo es la forma más simple de cuidar ese recurso.</p>
+                    </aside>
+                </article>
+                <div class="columna">
+                    <img class="foto-nosotros" src="imagenes/tote.svg" alt="Bolsa tote hecha con jean reutilizado">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Personalizador (portado del Rejean 1) ===== -->
+        <section id="taller">
+            <div class="contenedor">
+                <span class="sobretitulo">Personalizador</span>
+                <h2>Diseña tu pieza de jean.</h2>
+                <hr>
+                <p class="lead">Elige el producto, el lavado de la tela y el color del hilo. Mueve el cursor sobre la pieza para verla inclinarse y pídela al instante.</p>
+                <div class="cfg">
+                    <div class="view" id="view">
+                        <div class="ring"></div>
+                        <div class="idle"><div class="card3d" id="card3d"><div class="art" id="art"></div></div></div>
+                        <span class="price" id="price"></span>
+                    </div>
+                    <div class="ctl">
+                        <h3>1. Producto</h3>
+                        <div class="chips" id="cProd"></div>
+                        <h3>2. Lavado del jean</h3>
+                        <div class="sw" id="cWash"></div>
+                        <h3>3. Color del hilo</h3>
+                        <div class="sw" id="cThread"></div>
+                        <p class="sum" id="sum"></p>
+                        <a class="boton" href="#contacto" id="order">Pedir este diseño</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Sesión 7: galería de imágenes con lightbox ===== -->
+        <section id="productos">
+            <div class="contenedor">
+                <span class="sobretitulo">Catálogo</span>
+                <h2>Piezas únicas, nunca repetidas.</h2>
+                <hr>
+                <p class="lead">Toca cualquier imagen para verla en grande.</p>
+
+                <div id="galeria">
+                    <article>
+                        <h3 id="bolsas">Bolsas</h3>
+                        <div class="fila">
+                            <figure>
+                                <img src="imagenes/tote.svg" alt="Bolsa tote clásica">
+                                <h4>Bolsa tote clásica</h4>
+                                <p>Tote amplia con bolsillo frontal y asas reforzadas. Perfecta para la universidad o el mercado.</p>
+                                <p class="precio">S/ 45</p>
+                            </figure>
+                            <figure>
+                                <img src="imagenes/mochila.svg" alt="Mochila urbana">
+                                <h4>Mochila urbana</h4>
+                                <p>Mochila con cierre, bolsillos interiores y correas acolchadas.</p>
+                                <p class="precio">S/ 85</p>
+                            </figure>
+                            <figure>
+                                <img src="imagenes/funda-laptop.svg" alt="Funda para laptop">
+                                <h4>Funda para laptop</h4>
+                                <p>Acolchada, resistente a salpicaduras y con bolsillo extra.</p>
+                                <p class="precio">S/ 40</p>
+                            </figure>
+                            <figure>
+                                <img src="imagenes/monedero.svg" alt="Monedero mini">
+                                <h4>Monedero mini</h4>
+                                <p>Pequeño y práctico, con cierre metálico reciclado.</p>
+                                <p class="precio">S/ 12</p>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article>
+                        <h3 id="cartucheras">Cartucheras</h3>
+                        <div class="fila">
+                            <figure>
+                                <img src="imagenes/cartuchera-cilindrica.svg" alt="Cartuchera cilíndrica">
+                                <h4>Cartuchera cilíndrica</h4>
+                                <p>Cierre grueso, forro lavable y espacio para todo tu kit de útiles.</p>
+                                <p class="precio">S/ 18</p>
+                            </figure>
+                            <figure>
+                                <img src="imagenes/cartuchera-plana.svg" alt="Cartuchera plana">
+                                <h4>Cartuchera plana</h4>
+                                <p>Ligera y delgada, ideal para llevar en la mochila sin hacer bulto.</p>
+                                <p class="precio">S/ 15</p>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article>
+                        <h3 id="sombreros">Sombreros</h3>
+                        <div class="fila">
+                            <figure>
+                                <img src="imagenes/sombrero-bucket.svg" alt="Sombrero bucket">
+                                <h4>Sombrero bucket</h4>
+                                <p>Ala ancha para el sol, costura doble y forro interior.</p>
+                                <p class="precio">S/ 35</p>
+                            </figure>
+                            <figure>
+                                <img src="imagenes/gorra-patchwork.svg" alt="Gorra patchwork">
+                                <h4>Gorra patchwork</h4>
+                                <p>Parches de distintos tonos de jean: nunca encontrarás otra igual.</p>
+                                <p class="precio">S/ 30</p>
+                            </figure>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Sesión 6: fondo con efecto parallax ===== -->
+        <section id="impacto">
+            <div class="contenedor">
+                <span class="sobretitulo">Por qué importa</span>
+                <h2>Cada jean salvado cuenta.</h2>
+                <p class="lead">Reutilizar tela reduce residuos, ahorra agua y mantiene en circulación materiales que tardan años en degradarse.</p>
+                <div class="cifras">
+                    <div class="cifra">
+                        <h3>1 200</h3>
+                        <p>jeans rescatados</p>
+                    </div>
+                    <div class="cifra">
+                        <h3>3 500</h3>
+                        <p>litros de agua ahorrados por cada jean</p>
+                    </div>
+                    <div class="cifra">
+                        <h3>850</h3>
+                        <p>clientes felices</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Proceso ===== -->
+        <section id="proceso">
+            <div class="contenedor">
+                <span class="sobretitulo">Nuestro proceso</span>
+                <h2>Cuatro pasos, cero desperdicio.</h2>
+                <hr>
+                <div class="pasos">
+                    <article class="paso">
+                        <div class="numero">1</div>
+                        <h3>Recolectamos</h3>
+                        <p>Recibimos jeans donados o comprados en ferias y tiendas de segunda mano.</p>
+                    </article>
+                    <article class="paso">
+                        <div class="numero">2</div>
+                        <h3>Lavamos y cortamos</h3>
+                        <p>Los desinfectamos y aprovechamos cada centímetro: piernas, bolsillos y cinturas.</p>
+                    </article>
+                    <article class="paso">
+                        <div class="numero">3</div>
+                        <h3>Cosemos a mano</h3>
+                        <p>Armamos cada pieza con doble costura y forros resistentes.</p>
+                    </article>
+                    <article class="paso">
+                        <div class="numero">4</div>
+                        <h3>Tú lo estrenas</h3>
+                        <p>Llega a tu casa lista para usar, con una historia que contar.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Testimonios ===== -->
+        <section id="testimonios">
+            <div class="contenedor">
+                <span class="sobretitulo">Testimonios</span>
+                <h2>Lo que dicen quienes ya los usan.</h2>
+                <hr>
+                <div class="testimonios">
+                    <article class="testimonio">
+                        <p class="cita">“Mi tote de jean ya aguantó todo un ciclo en la universidad. Todos me preguntan dónde la compré.”</p>
+                        <p class="autor">★★★★★ · Camila R., Miraflores</p>
+                    </article>
+                    <article class="testimonio">
+                        <p class="cita">“Mi hijo estrenó cartuchera y no la ha perdido ni una vez, ¡se la cuida como un tesoro!”</p>
+                        <p class="autor">★★★★★ · Rosa M., San Miguel</p>
+                    </article>
+                    <article class="testimonio">
+                        <p class="cita">“El sombrero me salvó en la playa y encima sé que viene de un jean reciclado. Ideal.”</p>
+                        <p class="autor">★★★★★ · Diego P., Barranco</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Preguntas frecuentes ===== -->
+        <section id="faq">
+            <div class="contenedor">
+                <span class="sobretitulo">Preguntas frecuentes</span>
+                <h2>Resolvemos tus dudas.</h2>
+                <hr>
+                <div class="preguntas">
+                    <article class="pregunta">
+                        <h3>¿Los jeans están limpios?</h3>
+                        <p>Sí. Cada prenda se lava y desinfecta antes de cortarse, y los forros son telas nuevas.</p>
+                    </article>
+                    <article class="pregunta">
+                        <h3>¿Cuánto demora mi pedido?</h3>
+                        <p>Las piezas del catálogo salen en 3 a 5 días. Los diseños a medida toman entre 7 y 10 días.</p>
+                    </article>
+                    <article class="pregunta">
+                        <h3>¿Hacen envíos a todo Lima?</h3>
+                        <p>Sí, enviamos a todos los distritos de Lima y a provincias por agencia.</p>
+                    </article>
+                    <article class="pregunta">
+                        <h3>¿Puedo traer mis propios jeans?</h3>
+                        <p>Claro. Si quieres transformar un jean con valor sentimental, escríbenos y lo convertimos en la pieza que prefieras.</p>
+                    </article>
+                    <article class="pregunta">
+                        <h3>¿Qué tan resistentes son?</h3>
+                        <p>Usamos doble costura, remaches y forros reforzados: el jean ya demostró que aguanta años de uso.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Sesión 8: formulario de contacto ===== -->
+        <section id="contacto">
+            <div class="contenedor">
+                <span class="sobretitulo">Llamado a la acción</span>
+                <h2>Haz tu pedido o dona tus jeans.</h2>
+                <div class="info">
+                    <span>Lima, Perú</span>
+                    <span>+51 967 676 767</span>
+                    <span>hola@rejean.pe</span>
+                </div>
+                <div id="contenedor-formulario">
+                    <form action="#" method="post">
+                        <input class="mitad" type="text" id="nombres" name="nombres" placeholder="Nombres completos" required>
+                        <input class="mitad" type="text" id="apellidos" name="apellidos" placeholder="Apellidos completos" required>
+                        <input class="mitad" type="text" id="dni" name="dni" pattern="[0-9]{8}" placeholder="Número de DNI" required>
+                        <select class="mitad" id="distrito" name="distrito" required>
+                            <option value="">Selecciona tu distrito</option>
+                            <option value="miraflores">Miraflores</option>
+                            <option value="san-isidro">San Isidro</option>
+                            <option value="surco">Surco</option>
+                            <option value="la-molina">La Molina</option>
+                            <option value="san-miguel">San Miguel</option>
+                            <option value="barranco">Barranco</option>
+                            <option value="los-olivos">Los Olivos</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+                        <select id="interes" name="interes">
+                            <option value="bolsa">Quiero comprar una bolsa</option>
+                            <option value="cartuchera">Quiero comprar una cartuchera</option>
+                            <option value="sombrero">Quiero comprar un sombrero</option>
+                            <option value="donar">Quiero donar mis jeans</option>
+                        </select>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué te gustaría (colores, tamaño, ocasión…)"></textarea>
+                        <button class="boton" type="submit">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== Pie de página ===== -->
+    <footer>
+        <a class="logo" href="#"><img src="imagenes/icono.png" alt="Logo de ReJean">Re<span>Jean</span></a>
+        <div class="redes">
+            <a href="#">IG</a>
+            <a href="#">FB</a>
+            <a href="#">TT</a>
+            <a href="#">WA</a>
+        </div>
+        <p>© 2026 ReJean · Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Sesión 7: contenedor del lightbox (imagen ampliada) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Producto ampliado">
+    </div>
+
+    <!-- Archivos JavaScript al final del body (Sesiones 6, 7 y 9 + personalizador) -->
+    <script src="js/script.js"></script>
+    <script src="js/script_galeria.js"></script>
+    <script src="js/script_menu.js"></script>
+    <script src="js/script_personalizador.js"></script>
+</body>
+</html>

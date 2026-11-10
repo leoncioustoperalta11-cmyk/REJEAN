@@ -1,0 +1,1065 @@
+/* =====================================================
+   ReJean · hoja de estilos
+   Todo lo que se usa aquí sale del libro "Desarrollo Web".
+   Colores principales:
+     azul jean  #2c5aa0   |  azul noche #0a1830
+     verde lima #c6f432   |  fondo claro #eef1f7
+   ===================================================== */
+
+
+/* ===== Sesión 3: reinicio general (selector * ) ===== */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #0a1830;
+    background-color: #e6eef9;
+    background-image: url(../imagenes/fondo-jean.svg);   /* tela de jean clarita que se repite */
+    padding-top: 70px;              /* espacio para la barra fija */
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Oswald', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 44px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;               /* Sesión 3: propiedad list-style */
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+section {
+    padding: 100px 20px 70px 20px;  /* arriba grande: la barra fija no tapa los títulos */
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.sobretitulo {
+    color: #3f5d00;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.lead {
+    color: #4b5a77;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+hr {
+    border: 0;
+    border-top: 3px dashed #3f5d00; /* costura */
+    width: 120px;
+    margin: 15px 0 25px 0;
+}
+
+
+/* ===== Sesión 12: botón con transición y estado hover ===== */
+.boton {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #0a1830;
+    background-color: #c6f432;
+    padding: 14px 28px;
+    margin: 5px 10px 5px 0;
+    border: 2px dashed transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.boton:hover {
+    background-color: #ffffff;
+    border-color: #0a1830;
+    transform: translateY(-4px) rotate(-1deg);
+}
+
+.boton-borde {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.boton-borde:hover {
+    color: #0a1830;
+}
+
+
+/* ===== Sesión 9: barra de navegación y menú desplegable ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(10, 24, 48, 0.95);
+    z-index: 100;
+}
+
+nav {
+    max-width: 1100px;
+    height: 70px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.logo img {
+    width: 34px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.logo span {
+    color: #c6f432;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    position: relative;
+    margin-left: 24px;
+}
+
+.menu a {
+    display: block;
+    color: #eef1f7;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.menu a:hover {
+    color: #c6f432;
+    border-bottom-color: #c6f432;
+}
+
+.menu a.boton {
+    color: #0a1830;
+    padding: 8px 20px;
+    margin: 0;
+    border: 2px dashed transparent;
+}
+
+.menu a.boton:hover {
+    background-color: #ffffff;
+    border-color: #0a1830;
+    color: #0a1830;
+}
+
+/* Submenú: oculto hasta pasar el cursor (subclase hover) */
+.sub {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    width: 190px;
+    padding: 10px;
+    background-color: #0a1830;
+    border: 1px solid #2c3a63;
+    border-radius: 12px;
+    z-index: 200;
+}
+
+.sub li {
+    margin: 0;
+}
+
+.sub a {
+    padding: 8px 12px;
+    border-bottom: 0;
+    border-radius: 8px;
+}
+
+.sub a:hover {
+    background-color: #26345c;
+}
+
+.menu li:hover .sub {
+    display: block;
+}
+
+/* Botón de las 3 rayitas: escondido en PC */
+#menu-cel {
+    display: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 30px;
+    border: 0;
+    cursor: pointer;
+}
+
+
+/* ===== Sesión 6: slider ===== */
+#slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 650px;
+    margin: auto;
+    padding: 0;
+}
+
+#sliders {
+    display: flex;
+    width: 100%;
+    height: 650px;
+    transition: transform 1s ease-in-out;   /* el JavaScript mueve este contenedor */
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider1 { background-image: url(../imagenes/slider1.svg); }
+.slider2 { background-image: url(../imagenes/slider2.svg); }
+.slider3 { background-image: url(../imagenes/slider3.svg); }
+.slider4 { background-image: url(../imagenes/slider4.svg); }
+
+.texto-slide {
+    width: 480px;
+    margin-left: 80px;
+    padding: 30px;
+    color: #ffffff;
+    background-color: rgba(10, 24, 48, 0.7);
+    border: 2px dashed #c6f432;
+    border-radius: 24px;
+    animation: 1.2s ease 0s 1 both aparecer;
+}
+
+.texto-slide .sobretitulo {
+    color: #c6f432;
+}
+
+.texto-slide h1,
+.texto-slide h2 {
+    font-size: 54px;
+    margin: 12px 0;
+}
+
+.texto-slide p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.resaltado {
+    color: #c6f432;
+}
+
+.boton-latido {
+    animation: 1.5s ease 0s infinite latido;
+}
+
+/* Etiquetas que se balancean (Sesión 12: valanceo) */
+.etiqueta {
+    position: absolute;
+    z-index: 5;
+    padding: 8px 16px;
+    font-weight: bold;
+    color: #0a1830;
+    background-color: #ffffff;
+    border: 2px dashed #0a1830;
+    border-radius: 8px;
+    animation: 3s ease-in-out infinite valanceo;
+}
+
+.etiqueta1 {
+    right: 4%;
+    top: 20%;
+}
+
+.etiqueta2 {
+    right: 10%;
+    bottom: 16%;
+}
+
+
+/* ===== Sesión 12: marquesina ===== */
+#marquesina {
+    overflow: hidden;
+    padding: 12px 0;
+    background-color: #c6f432;
+    border-top: 3px dashed #0a1830;
+    border-bottom: 3px dashed #0a1830;
+}
+
+.texto_animacion {
+    display: inline-block;
+    padding-left: 100%;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 26px;
+    color: #0a1830;
+    white-space: nowrap;
+    animation: texto_animacion 30s linear infinite;
+}
+
+
+/* Costura (línea punteada) entre las secciones claras */
+#productos, #proceso, #testimonios, #faq {
+    border-top: 3px dashed #9db6dc;
+}
+
+/* ===== Presentación (Nosotros) ===== */
+#nosotros {
+    background-color: rgba(238, 244, 252, 0.55);
+}
+
+.dos-columnas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.columna {
+    width: 48%;
+}
+
+.etiquetas span {
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 0 8px 8px 0;
+    font-size: 15px;
+    border: 2px dashed #3f5d00;
+    border-radius: 30px;
+}
+
+aside {
+    margin-top: 20px;
+    padding: 18px 22px;
+    color: #eef1f7;
+    background-color: #0a1830;
+    border-left: 8px solid #c6f432;
+    border-radius: 16px;
+}
+
+aside h4 {
+    font-size: 20px;
+    color: #c6f432;
+    margin-bottom: 6px;
+}
+
+.foto-nosotros {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    display: block;
+    transition: 0.5s ease-in-out;
+}
+
+.foto-nosotros:hover {
+    transform: rotate(-5deg) scale(1.06);
+}
+
+
+/* ===== Personalizador (portado del Rejean 1) ===== */
+#taller {
+    color: #eef1f7;
+    background-color: #0a1830;
+    background-image: repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.04) 0 2px, transparent 2px 6px);
+    border-top: 3px dashed #c6f432;
+    border-bottom: 3px dashed #c6f432;
+}
+
+#taller .sobretitulo,
+#taller hr {
+    color: #c6f432;
+    border-top-color: #c6f432;
+}
+
+#taller .lead {
+    color: #b8c2de;
+}
+
+.cfg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view {
+    position: relative;
+    width: 54%;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(circle at var(--gx, 50%) var(--gy, 40%), #2f4fb8, #0b1437 70%);
+    border: 3px dashed #c6f432;
+    border-radius: 30px;
+    perspective: 900px;
+}
+
+.ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    height: 340px;
+    margin: -170px 0 0 -170px;
+    border: 3px dashed rgba(198, 244, 50, 0.5);
+    border-radius: 50%;
+    animation: 30s linear infinite girar;
+}
+
+.idle {
+    width: 70%;
+    max-width: 380px;
+    transform-style: preserve-3d;
+    animation: 8s ease-in-out infinite pendulo;
+}
+
+.card3d {
+    transform-style: preserve-3d;
+    transition: 0.15s;
+}
+
+.art {
+    transform: translateZ(70px);
+    filter: drop-shadow(0 40px 30px rgba(0, 0, 0, 0.5));
+}
+
+.art svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.price {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 8px 18px;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0a1830;
+    background-color: #c6f432;
+    border-radius: 10px 10px 10px 0;
+    transform: rotate(-4deg);
+}
+
+.ctl {
+    width: 40%;
+}
+
+.ctl h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 22px 0 10px 0;
+}
+
+.ctl h3:first-child {
+    margin-top: 0;
+}
+
+.chips,
+.sw {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chips button {
+    margin: 0 8px 8px 0;
+    padding: 8px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #eef1f7;
+    background-color: transparent;
+    border: 2px solid #4b5f93;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+.chips button:hover,
+.chips button.on {
+    color: #0a1830;
+    background-color: #c6f432;
+    border-color: #c6f432;
+}
+
+.sw button {
+    width: 42px;
+    height: 42px;
+    margin: 0 10px 10px 0;
+    border: 3px solid #0b1437;
+    border-radius: 50%;
+    outline: 2px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+.sw button.on {
+    outline: 3px solid #c6f432;
+    transform: scale(1.12);
+}
+
+.sum {
+    margin: 22px 0;
+    color: #b8c2de;
+}
+
+/* Animaciones del personalizador */
+@keyframes girar {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pendulo {
+    0%, 100% { transform: rotateY(-14deg) rotateX(-2deg); }
+    50%      { transform: rotateY(14deg) rotateX(4deg); }
+}
+
+
+/* ===== Sesión 7: galería con flex + hover + lightbox ===== */
+#productos {
+    background-color: rgba(255, 255, 255, 0.86);
+}
+
+#galeria h3 {
+    font-size: 32px;
+    color: #2c5aa0;
+    margin: 30px 0 10px 0;
+}
+
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+figure {
+    width: 23%;                       /* 4 columnas en PC */
+    height: auto;
+    margin: 0.5%;
+    overflow: hidden;
+    background-color: #f4f7fc;
+    border: 2px solid #c3d2ea;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+figure:hover {
+    transform: translateY(-8px);
+    border-color: #2c5aa0;
+}
+
+#galeria img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#galeria img:hover {
+    transform: scale(1.1);
+}
+
+figure h4 {
+    font-size: 22px;
+    padding: 10px 14px 0 14px;
+}
+
+figure p {
+    padding: 4px 14px;
+    font-size: 14px;
+    color: #4b5a77;
+}
+
+figure .precio {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 24px;
+    color: #2c5aa0;
+    padding-bottom: 14px;
+}
+
+/* Lightbox (copiado de la lógica del libro) */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    width: auto;
+    height: auto;
+}
+
+
+/* ===== Sesión 6: efecto parallax ===== */
+#impacto {
+    color: #ffffff;
+    text-align: center;
+    background-image: url(../imagenes/parallax.svg);
+    background-attachment: fixed;     /* la imagen se queda quieta, el marco se mueve */
+    background-position: center;
+    background-size: cover;
+}
+
+#impacto .sobretitulo {
+    color: #c6f432;
+}
+
+#impacto .lead {
+    color: #d5dcef;
+    margin: 0 auto 30px auto;
+}
+
+.cifras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cifra {
+    width: 24%;
+    margin: 10px 1.5%;
+    padding: 20px 2%;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 2px dashed #c6f432;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.cifra:hover {
+    transform: translateY(-8px) rotate(1deg);
+}
+
+.cifra h3 {
+    font-size: 60px;
+    color: #c6f432;
+}
+
+
+/* ===== Proceso ===== */
+#proceso {
+    background-color: rgba(238, 244, 252, 0.55);
+}
+
+.pasos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.paso {
+    position: relative;
+    width: 20%;
+    padding: 34px 2% 20px 2%;
+    background-color: #ffffff;
+    border: 1px solid #d3dbe8;
+    border-radius: 22px;
+    transition: 0.3s ease-in-out;
+}
+
+.paso:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+.numero {
+    position: absolute;
+    top: -18px;
+    left: 20px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: #c6f432;
+    border-radius: 50%;
+}
+
+.paso h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.paso p {
+    font-size: 15px;
+    color: #4b5a77;
+}
+
+
+/* ===== Testimonios ===== */
+#testimonios {
+    background-color: rgba(255, 255, 255, 0.86);
+}
+
+.testimonios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.testimonio {
+    width: 28%;
+    padding: 25px 2%;
+    background-color: #eef1f7;
+    border: 1px solid #d3dbe8;
+    border-radius: 22px;
+    transition: 0.3s ease-in-out;
+}
+
+.testimonio:hover {
+    transform: translateY(-8px) rotate(1deg);
+    border-color: #2c5aa0;
+}
+
+.cita {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+.autor {
+    font-size: 14px;
+    color: #4b5a77;
+}
+
+
+/* ===== Preguntas frecuentes ===== */
+#faq {
+    background-color: rgba(238, 244, 252, 0.55);
+}
+
+.preguntas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pregunta {
+    width: 44%;
+    padding: 20px 2%;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #d3dbe8;
+    border-radius: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.pregunta:hover {
+    border-color: #2c5aa0;
+    transform: translateX(6px);
+}
+
+.pregunta h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.pregunta p {
+    color: #4b5a77;
+}
+
+
+/* ===== Sesión 8: formulario de contacto ===== */
+#contacto {
+    color: #eef1f7;
+    text-align: center;
+    background-color: #0a1830;
+}
+
+#contacto .sobretitulo {
+    color: #c6f432;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0 30px 0;
+    color: #b8c2de;
+}
+
+.info span {
+    margin: 0 15px;
+}
+
+#contenedor-formulario {
+    max-width: 960px;
+    margin: auto;
+    padding: 30px 2%;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 2px dashed #c6f432;
+    border-radius: 26px;
+}
+
+form {
+    width: auto;
+    margin: auto;
+    text-align: left;
+    overflow: hidden;
+}
+
+input, textarea, select {
+    width: 96%;
+    padding: 10px 2%;
+    margin: 5px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    color: #eef1f7;
+    background-color: #0e1730;
+    border: 2px solid #3e5185;
+    border-radius: 10px;
+    transition: 0.25s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #c6f432;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.mitad {
+    width: 42%;                       /* dos campos por fila */
+    margin: 5px 0.5%;
+}
+
+form .boton {
+    width: 100%;
+    margin: 10px 0 0 0;
+    font-size: 18px;
+}
+
+
+/* ===== Pie de página ===== */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    color: #b8c2de;
+    background-color: #060d1c;
+}
+
+footer .logo {
+    justify-content: center;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.redes a {
+    width: 46px;
+    height: 46px;
+    margin: 0 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #eef1f7;
+    border: 2px dashed #c6f432;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+}
+
+.redes a:hover {
+    background-color: #c6f432;
+    color: #0a1830;
+    transform: rotate(360deg);
+}
+
+
+/* ===== Sesión 12: animaciones con @keyframes ===== */
+
+/* Marquesina: el texto va de derecha a izquierda */
+@keyframes texto_animacion {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Valanceo: se balancea de un lado a otro */
+@keyframes valanceo {
+    0%   { transform: rotate(-5deg); }
+    50%  { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+/* Latido: el botón "late" como un corazón */
+@keyframes latido {
+    0%, 50%, 100% { transform: scale(1, 1); }
+    30%, 80%      { transform: scale(0.92, 0.95); }
+}
+
+/* Aparecer: el texto del banner sube mientras se hace visible */
+@keyframes aparecer {
+    0%   { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ===== Sesión 4: diseño responsive con media queries ===== */
+
+/* Tablet (hasta 960px) */
+@media (max-width: 960px) {
+
+    h2 { font-size: 36px; }
+
+    /* Menú desplegable de celular (Sesión 9) */
+    #menu-cel {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #0a1830;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .menu.active {
+        max-height: 650px;
+    }
+
+    .menu li {
+        margin: 6px 20px;
+    }
+
+    .menu a.boton {
+        margin-bottom: 10px;
+    }
+
+    .sub {
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0 0 0 14px;
+        background-color: transparent;
+        border: 0;
+    }
+
+    /* Slider */
+    #slider, #sliders, .slide { height: 560px; }
+    .texto-slide { width: 420px; margin-left: 40px; }
+    .texto-slide h1, .texto-slide h2 { font-size: 44px; }
+
+    /* Personalizador */
+    .cfg { flex-direction: column; }
+    .view { width: 100%; margin-bottom: 30px; }
+    .ctl { width: 100%; }
+
+    /* Secciones */
+    .dos-columnas { flex-direction: column; }
+    .columna { width: 100%; }
+    .foto-nosotros { margin: 30px auto 0 auto; }
+
+    figure { width: 48%; }
+    .cifra { width: 40%; }
+    #impacto { background-attachment: scroll; }
+
+    .paso { width: 44%; margin-bottom: 30px; }
+    .testimonio { width: 94%; margin-bottom: 20px; }
+    .pregunta { width: 94%; }
+}
+
+/* Celular (hasta 480px) */
+@media (max-width: 480px) {
+
+    h2 { font-size: 30px; }
+
+    section { padding: 90px 15px 50px 15px; }
+
+    #slider, #sliders, .slide { height: 520px; }
+
+    .texto-slide {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .texto-slide h1, .texto-slide h2 { font-size: 32px; }
+    .texto-slide p { font-size: 16px; }
+
+    .etiqueta { display: none; }
+
+    .view { height: 400px; }
+    .ring { width: 270px; height: 270px; margin: -135px 0 0 -135px; }
+
+    .texto_animacion { font-size: 20px; }
+
+    figure { width: 94%; margin: 1%; }
+
+    .cifra { width: 90%; }
+    .cifra h3 { font-size: 48px; }
+
+    .pasos { justify-content: center; }
+    .paso { width: 90%; }
+
+    .mitad { width: 96%; margin: 5px 0; }
+}
